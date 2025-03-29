@@ -29,7 +29,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 9%;
+    padding: 1.2rem 9%;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
@@ -47,10 +47,15 @@ header.scrolled {
 }
 
 .logo {
-    font-size: 2.7rem;
-    color: #6a9367; /* Matching your blue theme */
-    font-weight: 800;
+    display: flex;
+    align-items: center;
     transition: all 0.3s ease;
+}
+
+.logo img {
+    height: 50px; /* Adjust based on your logo size */
+    width: auto; /* Maintains aspect ratio */
+    transition: transform 0.3s ease-in-out;
 }
 
 /* Ensure content doesn't hide behind header */
@@ -59,9 +64,8 @@ section {
 }
 
 
-
-.logo:hover{
-    transform: scale(1.1);
+.logo:hover img {
+    transform: scale(1.1); /* Keeps hover effect */
 }
 
 nav a{
