@@ -55,7 +55,7 @@ header.scrolled {
 .logo img {
     height: 20px; /* Adjust based on your logo size */
     width: auto; /* Maintains aspect ratio */
-    transition: transform 0.3s ease-in-out;
+    object-fit: contain;
 }
 
 /* Ensure content doesn't hide behind header */
