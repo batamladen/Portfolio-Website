@@ -53,7 +53,7 @@ header.scrolled {
 }
 
 .logo img {
-    height: 30px; /* Adjust based on your logo size */
+    height: 50px; /* Adjust based on your logo size */
     width: auto; /* Maintains aspect ratio */
     object-fit: contain;
 }
