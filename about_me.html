@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css"> <!-- Corrected CSS file path -->
+</head>
+
+
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) { // Adjust this value to change when the effect triggers
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+
+
+
+<body class="aboutme-page">
+
+<header>
+    <div class="logo">
+        <a href="index.html" style="color: #d47e50;">BataMladen</a> <!-- Logo now in green color -->
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html" class="active">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="aboutme">
+    <div class="aboutme-content">
+        <h1>About Me</h1>
+        <p>
+            Hello, I'm Mladen Nikolov!<br>
+            I am a cybersecurity student based in Sofia, Bulgaria, originally from Pirot, Serbia. I am passionate about technology and programming, and I enjoy teaching kids Python, holding them the door to enter the world of coding.<br><br>
+
+            Apart from the IT sphere, I enjoy playing football, hitting the gym, drawing portraits, and exploring new books.<br><br>
+
+            I believe in continuous learning and improving myself, both in the tech world and in life.<br>
+            Feel free to connect with me on any of the social links provided in the home page!
+        </p>
+    </div>
+
+    <div class="aboutme-img">
+        <img src="aboutme.webp" alt="Mladen Nikolov">
+    </div>
+
+
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) { // Adjust this value to change when the effect triggers
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+
+
+<body class="portfolio-page">
+
+<header>
+    <div class="logo">
+        <a href="index.html" style="color: #5087d4;">BataMladen</a> 
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about_me.html">About Me</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<section class="portfolio">
+    <div class="portfolio-intro">
+    </div>
+    
+
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-icon">Education</div> <!-- You can replace this with an icon or SVG -->
+        <div class="divider-line"></div>
+    </div>
+
+
+
+    <div class="education-section">        
+        <div class="education-items">
+            <div class="education-item">
+                <h2>Technical High School</h2>
+                <p>Tehnička Škola, Pirot, Serbia - 2019</p>
+            </div>
+
+            <div class="education-item">
+                <h2>Bachelor's Degree in Computer Administration</h2>
+                <p>VUTP, Sofia, Bulgaria - 2023</p>
+            </div>
+            
+            <div class="education-item">
+                <h2>Master's Degree in Cybersecurity</h2>
+                <p>VUTP, Sofia, Bulgaria - 2025</p>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- Add this after the education-section closing div -->
+<div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon">Certifications</div> <!-- You can replace this with an icon or SVG -->
+    <div class="divider-line"></div>
+</div>
+
+<div class="certifications-section">
+    <!-- Your existing certifications content -->
+</div>
+
+    <!-- Add this after the education-section closing div -->
+    <div class="certifications-section">
+    
+        <div class="certifications-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-item">
+                <div class="certificate-img-container">
+                    <img src="CCNA1.webp" alt="Certificate 1" class="certificate-img">
+                    <div class="certificate-overlay">
+                        <h3>CCNA1</h3>
+                        <p>Cisco</p>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- Certificate 2 -->
+            <div class="certificate-item">
+                <div class="certificate-img-container">
+                    <img src="CCNA2.webp" alt="Certificate 2" class="certificate-img">
+                    <div class="certificate-overlay">
+                        <h3>CCNA2</h3>
+                        <p>Cisco</p>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- Certificate 3 -->
+            <div class="certificate-item">
+                <div class="certificate-img-container">
+                    <img src="CyberApocalipse24.webp" alt="Certificate 2" class="certificate-img">
+                    <div class="certificate-overlay">
+                        <h3>CyberApocalipse '24 CTF</h3>
+                        <p>HackTheBox</p>
+                    </div>
+                </div>
+            </div>
+
+
+        <!-- Add more certificates as needed -->
+            <div class="certificate-item">
+                <div class="certificate-img-container">
+                    <img src="CyberApocalipse25.webp" alt="Certificate 2" class="certificate-img">
+                    <div class="certificate-overlay">
+                        <h3>CyberApocalipse '25 CTF</h3>
+                        <p>HackTheBox</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+    
+
+
+</section>
+
+
+
+
+
+
+
+
+</body>
+</html>

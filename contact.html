@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | BataMladen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="contact-page">
+
+<header>
+    <div class="logo">
+        <a href="index.html" style="color: #d56161;">BataMladen</a>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="#" class="active">Contact</a>
+    </nav>
+</header>
+
+
+
+<section class="contact">
+    <div class="contact-content">
+        <h1>Let's <span style="color: #d56161;">Connect</span></h1>
+        
+        <p>
+            Have questions or want to work together? Feel free to reach out through any of these channels.
+        </p>
+        
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form action="https://formspree.io/f/mladennikolov2002@gmail.com" method="POST">
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What would you like to discuss?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" required placeholder="Hi Mladen, I'd love to talk about..."></textarea>
+                </div>
+                
+                <input type="hidden" name="_replyto" value="mladennikolov2002@gmail.com">
+                
+                <button type="submit" class="btn submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>
+        </div>
+        
+
+        <h2 class="section-title">Or contact me another way</h2>
+
+
+
+        <!-- Alternative Contact Methods -->
+        <div class="contact-methods">
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>mladennikolov2002@gmail.com</p>
+                <a href="mailto:mladennikolov2002@gmail.com" class="btn">
+                    <i class="fas fa-paper-plane"></i> Send Email
+                </a>
+            </div>
+            
+            <div class="contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Phone</h3>
+                <p>+359 89 123 4567</p>
+                <a href="tel:+359891234567" class="btn">
+                    <i class="fas fa-phone-alt"></i> Call Me
+                </a>
+            </div>
+            
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>Sofia, Bulgaria</p>
+                <a href="https://maps.google.com/?q=Sofia" class="btn" target="_blank">
+                    <i class="fas fa-map-marked-alt"></i> View Map
+                </a>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Or via any of these social networks</h2>
+
+
+        <!-- Social Links -->
+        <div class="social-icons">
+            <a href="https://github.com/batamladen" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/mladen-nikolov-1b4720200/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/bata_mladen/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://app.hackthebox.com/profile/1801727" title="Hack The Box"><i class="fas fa-cube"></i></a>
+            <a href="mailto:mladennikolov2002@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="YOUR_PGP_KEY_LINK" title="PGP Key"><i class="fas fa-key"></i></a>
+        </div>
+    </div>
+</section>
+
+<script>
+    // IDENTICAL SCROLL BEHAVIOR TO INDEX.HTML
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // FORM HANDLING
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                setTimeout(() => {
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                    submitBtn.disabled = false;
+                }, 2000);
+            }, 1500);
+        });
+    }
+</script>
+
+</body>
+</html>
