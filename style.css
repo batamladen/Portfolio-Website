@@ -1,5 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
+/* Add this at the top of your CSS */
+:root {
+    --mobile-padding: 2rem;
+}
+
+@media(max-width: 768px) {
+    html {
+        font-size: 55%; /* Better mobile font sizing */
+    }
+    
+    section {
+        padding: 8rem var(--mobile-padding) 5rem;
+    }
+    
+    header {
+        padding: 1.2rem var(--mobile-padding);
+    }
+    
+    header.scrolled {
+        padding: 1rem var(--mobile-padding);
+    }
+}
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -50,6 +75,7 @@ header.scrolled {
     display: flex;
     align-items: center;
     transition: all 0.3s ease;
+    margin-right: auto;
 }
 
 .logo img {
@@ -78,46 +104,13 @@ nav a{
 }
 
 /* Default hover color for home page */
-nav a:hover,
+body.home-page nav a:hover,
 nav a.index {
     color: #6a9367;
     border-bottom: 3px solid #6a9367;
 }
 
 
-
-@media(max-width:995px) {
-    nav{
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid #6a9367;
-        border-bottom: 3px solid #6a9367;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
-        background-color: #161616;
-        border-top: 0.1rem solid rgba(0,0,0,0.1);
-    }
-
-    nav.active{
-        display: block;
-    }
-
-    nav a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
-
-    nav a:hover,
-    nav a.active{
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
-    }
-}
 
 section{
     min-height: 100vh;
@@ -314,12 +307,33 @@ span{
     box-shadow: 0 0 25px #d47e50;
 }
 
-body.aboutme-page nav a:hover {
+.about-page nav a:hover {
     color: #d47e50; /* Orange color when hovering over links */
     border-bottom: 3px solid #d47e50; /* Orange border on hover */
 }
 
-
+@media(max-width: 768px) {
+    .aboutme {
+        flex-direction: column;
+        gap: 4rem;
+        padding: 8rem var(--mobile-padding) 5rem;
+    }
+    
+    .aboutme-img img {
+        width: 70vw;
+        margin-top: 3rem;
+    }
+    
+    .aboutme-content h1 {
+        font-size: 3.5rem;
+        text-align: center;
+    }
+    
+    .aboutme-content p {
+        text-align: center;
+        font-size: 1.6rem;
+    }
+}
 
 
 
@@ -335,7 +349,7 @@ body.aboutme-page nav a:hover {
     padding: 10rem 9% 5rem;
 }
 
-body.portfolio-page nav a:hover {
+.portfolio-page nav a:hover {
     color: #5087d4; /* Orange color when hovering over links */
     border-bottom: 3px solid #5087d4; /* Orange border on hover */
 }
@@ -358,11 +372,6 @@ body.portfolio-page nav a:hover {
     margin-left: 0;
     margin-bottom: 3rem;
 }
-
-
-
-
-
 
 .education-title {
     font-size: 3.5rem;
@@ -401,18 +410,6 @@ body.portfolio-page nav a:hover {
     font-size: 1.4rem;
     color: #ccc;
 }
-
-/* Responsive adjustments */
-@media(max-width: 768px) {
-    .education-section {
-        width: 100%;
-    }
-    
-    .portfolio {
-        padding: 10rem 5% 5rem;
-    }
-}
-
 
 
 
@@ -672,6 +669,40 @@ body.portfolio-page nav a:hover {
 }
 
 
+
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+    .portfolio {
+        padding: 8rem var(--mobile-padding) 5rem;
+    }
+    
+    .education-section {
+        width: 100%;
+    }
+    
+    .certifications-grid, 
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-item {
+        height: auto;
+        padding: 2rem;
+    }
+    
+    .project-item a {
+        position: static;
+        margin-top: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
 /* Contact page */
 
 /* Fixed the selector and spacing */
@@ -872,26 +903,22 @@ body.portfolio-page nav a:hover {
     letter-spacing: 0.5px;
 }
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
     .contact-page .contact {
-        padding: 8rem 1.5rem 3rem 1.5rem;
-    }
-    
-    .contact-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .contact-content p {
-        font-size: 1.2rem;
+        padding: 8rem var(--mobile-padding) 5rem;
     }
     
     .contact-methods {
         grid-template-columns: 1fr;
     }
     
-    .section-title {
-        font-size: 1.7rem;
-        margin: 3rem 0 1.5rem 0;
+    .contact-card {
+        padding: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 1rem;
     }
 }
 
@@ -957,6 +984,178 @@ body.portfolio-page nav a:hover {
         margin-bottom: 1rem;
     }
 
+    .footer-links li {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+}
+
+
+
+
+/* ===================== */
+/* GLOBAL COLOR VARIABLES */
+/* ===================== */
+/* Define these OUTSIDE the media query */
+.home-page {
+    --nav-color: #6a9367;
+    --nav-color-rgb: 106, 147, 103;
+}
+.about-page {
+    --nav-color: #d47e50;
+    --nav-color-rgb: 212, 126, 80;
+}
+.portfolio-page {
+    --nav-color: #5087d4;
+    --nav-color-rgb: 80, 135, 212;
+}
+.contact-page {
+    --nav-color: #d56161;
+    --nav-color-rgb: 213, 97, 97;
+}
+
+/* ===================== */
+/* MOBILE NAVIGATION CSS */
+/* ===================== */
+@media(max-width: 995px) {
+    /* Menu Toggle Button - Colored Version */
+    .menu-toggle {
+        display: flex;
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        width: 4rem;
+        height: 4rem;
+        background: rgba(var(--nav-color-rgb), 0.2);
+        border-radius: 50%;
+        z-index: 1001;
+        cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        border: 2px solid var(--nav-color);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--nav-color);
+        margin: 4px 0;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+    }
+    
+    /* Active state (X icon) */
+    .menu-toggle.active {
+        background: rgba(0, 0, 0, 0.8);
+        border-color: white;
+    }
+    
+    .menu-toggle.active span {
+        background: white;
+    }
+    
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+    
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Navigation Menu */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: rgba(22, 22, 22, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        transition: all 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        padding: 8rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        border-left: 3px solid var(--nav-color);
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    /* Navigation Links */
+    nav a {
+        display: block;
+        font-size: 2rem;
+        color: white;
+        padding: 1.5rem;
+        margin: 0.5rem 0;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    nav a:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        background: var(--nav-color);
+        transition: width 0.3s ease;
+    }
+    
+    nav a:hover,
+    nav a.active {
+        color: var(--nav-color);
+        background: rgba(var(--nav-color-rgb), 0.1);
+        transform: translateX(5px);
+    }
+    
+    nav a:hover:before,
+    nav a.active:before {
+        width: 100%;
+    }
+    
+    /* Close button */
+    .close-menu {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        color: var(--nav-color);
+        font-size: 2.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .close-menu:hover {
+        transform: rotate(90deg);
+        color: white;
+        background: rgba(var(--nav-color-rgb), 0.2);
+    }
+}
+
+/* Footer Mobile Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-left, .footer-center, .footer-right {
+        margin-bottom: 1rem;
+    }
     .footer-links li {
         display: block;
         margin-bottom: 0.5rem;
