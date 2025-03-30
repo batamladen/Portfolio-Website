@@ -551,6 +551,104 @@ body.portfolio-page nav a:hover {
 
 
 
+/* Projects Section */
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    width: 100%;
+    margin-top: 0rem;
+}
+
+.projects-title {
+    font-size: 3.5rem;
+    color: #5087d4;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.project-item {
+    position: relative; /* This is required to position the "View Project" link at the bottom */
+    height: 500px; /* Ensure all boxes have the same height */
+    background-color: #1c1c1c;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    border-left: 4px solid #5087d4;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 18px #ffffff69;
+}
+
+.project-item .project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.project-item .project-img:hover {
+    transform: scale(1.05);
+}
+
+.project-item h3 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: #5087d4;
+}
+
+.project-item p {
+    
+    font-size: 1.4rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.project-item a {
+    position: absolute;  /* Position the button at the bottom */
+    bottom: 20px;
+    text-decoration: none;
+    color: #5087d4;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: 1px solid #5087d4;
+    border-radius: 5px;
+}
+
+.project-item a:hover {
+    color: white; /* Change the hover color to match your theme */
+}
+
+/* Responsive adjustments for projects section */
+@media(max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+
+
+
+
 /* Section Dividers */
 .section-divider {
     display: flex;
@@ -794,5 +892,73 @@ body.portfolio-page nav a:hover {
     .section-title {
         font-size: 1.7rem;
         margin: 3rem 0 1.5rem 0;
+    }
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: #121212;
+    color: #ccc;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-center {
+    flex: 2;
+}
+
+.footer-right {
+    flex: 1;
+}
+
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer-links a:hover {
+    color: #ffffff; /* Hover color change */
+}
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        margin-bottom: 1rem;
+    }
+
+    .footer-links li {
+        display: block;
+        margin-bottom: 0.5rem;
     }
 }
