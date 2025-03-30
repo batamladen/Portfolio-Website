@@ -1,36 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
     <link rel="icon" type="image/png" href="favicon.ico">
     <title>Bata Mladen</title>
 </head>
 
 
-<script>
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        if (window.scrollY > 50) { // Adjust this value to change when the effect triggers
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-</script>
 
-
-
-<body>
-
+<body class="home-page">
     <header>
         <a href="#" class="logo">
             <img src="BM zeleno.webp" alt="BataMladen Logo">
-        </a>        
+        </a>
+        
+        <button class="menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <nav>
             <a href="#" class="active">Home</a>
             <a href="about.html">About Me</a>
@@ -68,76 +60,83 @@
         </div>
     </section>
 
-<style>
-    #typing::after {
-        content: "";
-        display: inline-block;
-        animation: blink 0.8s infinite;
-    }
+    <style>
+        #typing::after {
+            content: "";
+            display: inline-block;
+            animation: blink 0.8s infinite;
+        }
 
-    @keyframes blink {
-        50% { opacity: 0; }
-    }
-</style>
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const textElement = document.getElementById("typing");
-const words = ["a student", "teaching kids Python", "an aspiring SOC analyst", "a tech enthusiast", "a fittness addict", "an artist"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-    let currentWord = words[wordIndex];
-    let currentText = currentWord.substring(0, charIndex);
-
-    textElement.textContent = currentText;
-
-    if (!isDeleting && charIndex < currentWord.length) {
-        charIndex++; // Type letters
-        setTimeout(typeEffect, 100); // Adjust speed here
-    } else if (isDeleting && charIndex > 0) {
-        charIndex--; // Delete letters
-        setTimeout(typeEffect, 50); // Adjust delete speed here
-    } else {
-        isDeleting = !isDeleting; // Switch between typing & deleting
-        wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
-        setTimeout(typeEffect, 1000); // Pause before typing next word
-    }
-}
-
-// Start the typing effect
-typeEffect();
-
-    });
-</script>
-
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    
-    hamburger.addEventListener('click', function() {
-        nav.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-    
-    // Close menu when clicking on a link
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('active');
-            hamburger.classList.remove('active');
+    <script>
+        // Scrolling header effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
-    });
-});
 
-</script>
+        // Typing effect
+        document.addEventListener("DOMContentLoaded", function() {
+            const textElement = document.getElementById("typing");
+            const words = ["a student", "teaching kids Python", "an aspiring SOC analyst", 
+                          "a tech enthusiast", "a fitness addict", "an artist"];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
 
+            function typeEffect() {
+                let currentWord = words[wordIndex];
+                let currentText = currentWord.substring(0, charIndex);
 
+                textElement.textContent = currentText;
 
+                if (!isDeleting && charIndex < currentWord.length) {
+                    charIndex++;
+                    setTimeout(typeEffect, 100);
+                } else if (isDeleting && charIndex > 0) {
+                    charIndex--;
+                    setTimeout(typeEffect, 50);
+                } else {
+                    isDeleting = !isDeleting;
+                    wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+                    setTimeout(typeEffect, 1000);
+                }
+            }
 
+            typeEffect();
+        });
 
+        // Mobile navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            const closeMenu = document.querySelector('.close-menu');
+
+            menuToggle.addEventListener('click', () => {
+                nav.classList.add('active');
+                menuToggle.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+            });
+
+            closeMenu.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+
+            // Close menu when clicking on a link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

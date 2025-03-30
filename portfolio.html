@@ -23,6 +23,15 @@
 
 <!-- Header Section -->
 <header>
+
+    <button class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+
     <div class="logo">
         <a href="index.html" class="logo">
             <img src="BM blue.webp" alt="BataMladen Logo">
@@ -181,6 +190,38 @@
         </div>
     </section>
     
+    <script>
+        // Mobile navigation
+        document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const nav = document.querySelector('nav');
+                const closeMenu = document.querySelector('.close-menu');
+    
+                menuToggle.addEventListener('click', () => {
+                    nav.classList.add('active');
+                    menuToggle.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                });
+    
+                closeMenu.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                });
+    
+                // Close menu when clicking on a link
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        nav.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            });
+    
+    </script>
+
+
 
 </body>
 </html>
