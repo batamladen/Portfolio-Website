@@ -158,36 +158,34 @@
 
     // Mobile navigation
     document.addEventListener('DOMContentLoaded', function() {
-                const menuToggle = document.querySelector('.menu-toggle');
-                const nav = document.querySelector('nav');
-                const closeMenu = document.querySelector('.close-menu');
-    
-                menuToggle.addEventListener('click', () => {
-                    nav.classList.add('active');
-                    menuToggle.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-                });
-    
-                closeMenu.addEventListener('click', () => {
-                    nav.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                    document.body.style.overflow = ''; // Re-enable scrolling
-                });
-    
-                // Close menu when clicking on a link
-                document.querySelectorAll('nav a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        nav.classList.remove('active');
-                        menuToggle.classList.remove('active');
-                        document.body.style.overflow = '';
-                    });
-                });
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            const isActive = nav.classList.contains('active');
+
+            if (isActive) {
+                // Close menu
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            } else {
+                // Open menu
+                nav.classList.add('active');
+                menuToggle.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.style.overflow = '';
             });
-    
-
-
-
-
+        });
+    });
 
 
 </script>
