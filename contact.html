@@ -95,8 +95,8 @@
             <div class="contact-card">
                 <i class="fas fa-phone-alt"></i>
                 <h3>Phone</h3>
-                <p>+359 89 123 4567</p>
-                <a href="tel:+359891234567" class="btn">
+                <p>+359 88 2716297</p>
+                <a href="tel:+359882716297" class="btn">
                     <i class="fas fa-phone-alt"></i> Call Me
                 </a>
             </div>
@@ -121,8 +121,23 @@
             <a href="https://www.instagram.com/bata_mladen/" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://app.hackthebox.com/profile/1801727" title="Hack The Box"><i class="fas fa-cube"></i></a>
             <a href="mailto:mladennikolov2002@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="YOUR_PGP_KEY_LINK" title="PGP Key"><i class="fas fa-key"></i></a>
+            <a href="#" title="PGP Key" id="pgpKeyButton"><i class="fas fa-key"></i></a>
         </div>
+
+        <!-- PGP Key Modal -->
+        <div id="pgpModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>My PGP Public Key</h2>
+                <pre id="pgpKey">
+        -----BEGIN PGP PUBLIC KEY BLOCK-----
+        "Will be added" - he said, and never remembered to do so.
+        -----END PGP PUBLIC KEY BLOCK-----
+                </pre>
+                <button id="copyPgpKey">Copy Key</button>
+            </div>
+        </div>
+        
     </div>
 </section>
 
@@ -185,8 +200,39 @@
                 document.body.style.overflow = '';
             });
         });
+
+        
     });
 
+     /* JavaScript for Modal */
+    document.addEventListener("DOMContentLoaded", function () {
+            const pgpButton = document.getElementById("pgpKeyButton");
+            const modal = document.getElementById("pgpModal");
+            const closeModal = document.querySelector(".close");
+            const copyButton = document.getElementById("copyPgpKey");
+            const pgpText = document.getElementById("pgpKey").innerText;
+
+            pgpButton.addEventListener("click", function (event) {
+                event.preventDefault();
+                modal.style.display = "block";
+            });
+
+            closeModal.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            copyButton.addEventListener("click", function () {
+                navigator.clipboard.writeText(pgpText).then(() => {
+                    alert("PGP Key copied to clipboard!");
+                });
+            });
+        });
 
 </script>
 
