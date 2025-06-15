@@ -103,6 +103,16 @@ nav a{
     border-bottom: 3px solid transparent;
 }
 
+nav a.download-cv {
+    color: gray;
+}
+
+nav a.download-cv:hover {
+    color: #6a9367;
+    border-bottom: 3px solid #6a9367;
+}
+
+
 /* Default hover color for home page */
 body.home-page nav a:hover,
 nav a.index {
