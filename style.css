@@ -363,11 +363,40 @@ span{
     display: inline-block;
 }
 
+.aboutme-content h2 {
+    font-size: 3rem; /* Large size similar to your home page */
+    color: #d47e50; /* Matching your orange theme */
+    font-weight: 500;
+    line-height: 1;
+}
+
+/* If you want a special effect */
+.aboutme-content h2 {
+    position: relative;
+    display: inline-block;
+}
+
+.aboutme-content h3 {
+    font-size: 2rem; /* Large size similar to your home page */
+    color: #a7a09c; /* Matching your orange theme */
+    margin-bottom: 0.2rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+
+
 .aboutme-content p {
     font-size: 1.6rem;
     margin-top: 2rem;  /* Adds space above the paragraph */
     line-height: 2;  /* Increases line spacing for better readability */
     color: white;
+}
+
+.aboutme-content p a {
+    color: #d47e50; /* Orange color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .aboutme-img img {
