@@ -156,6 +156,14 @@ span{
     font-size: 1.6rem;
 }
 
+.home-content p a {
+    color: #6a9367;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+
 .home-img{
     border-radius: 50%;
 }
