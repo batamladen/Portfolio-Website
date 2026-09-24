@@ -449,8 +449,184 @@ span{
 
 
 
+.bookmarks-page {
+    --nav-color: #d47e50;
+    --nav-color-rgb: 212, 126, 80;
+}
 
+.bookmarks-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10rem 2rem 5rem;
+}
 
+.bookmarks-intro {
+    margin-bottom: 3rem;
+}
+
+.eyebrow {
+    font-size: 1.4rem;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+    color: #d47e50;
+    margin-bottom: 1rem;
+}
+
+.bookmarks-intro h1 {
+    font-size: 4.5rem;
+    color: #d47e50;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.bookmarks-intro p:last-child {
+    font-size: 1.7rem;
+    color: #e8e8e8;
+    line-height: 1.7;
+}
+
+.bookmarks-shell {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+
+.bookmarks-tree {
+    padding: 0;
+}
+
+.tree-folder {
+    border-left: 2px solid rgba(212, 126, 80, 0.5);
+    margin-bottom: 1.2rem;
+    padding-left: 1.2rem;
+}
+
+.tree-folder.nested {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.tree-folder:last-child {
+    margin-bottom: 0;
+}
+
+.tree-folder summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f4d0bf;
+    padding: 0.5rem 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.tree-folder summary::-webkit-details-marker {
+    display: none;
+}
+
+.tree-folder summary::before {
+    content: "+";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.8rem;
+    border-radius: 0.4rem;
+    background: rgba(212, 126, 80, 0.18);
+    color: #d47e50;
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.tree-folder[open] > summary::before {
+    content: "−";
+}
+
+.tree-folder summary:hover {
+    background: rgba(212, 126, 80, 0.12);
+    transform: translateX(3px);
+}
+
+.tree-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.8rem 0 0.6rem 1.6rem;
+}
+
+.tree-group a {
+    display: block;
+    color: white;
+    font-size: 1.45rem;
+    line-height: 1.6;
+    padding: 0.5rem 0.8rem;
+    border-left: 2px solid rgba(212, 126, 80, 0.5);
+    border-radius: 0 6px 6px 0;
+    transition: all 0.25s ease;
+}
+
+.tree-group a:hover {
+    color: #d47e50;
+    background: rgba(212, 126, 80, 0.08);
+    border-left-color: #d47e50;
+    transform: translateX(4px);
+}
+
+.bookmarks-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.export-btn {
+    background-color: #d47e50;
+    color: black;
+    border-color: #d47e50;
+    box-shadow: 0 0 18px rgba(212, 126, 80, 0.3);
+}
+
+.export-btn:hover {
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 25px rgba(212, 126, 80, 0.6);
+}
+
+.bookmarks-page nav a:hover,
+.bookmarks-page nav a.active,
+.bookmarks-page nav a:hover:before,
+.bookmarks-page nav a.active:before {
+    color: var(--nav-color);
+    border-bottom-color: var(--nav-color);
+}
+
+@media(max-width: 768px) {
+    .bookmarks-intro h1 {
+        font-size: 3.5rem;
+    }
+
+    .bookmarks-intro p:last-child {
+        font-size: 1.45rem;
+    }
+
+    .bookmarks-tree {
+        padding: 1.5rem;
+    }
+
+    .tree-folder summary {
+        font-size: 1.5rem;
+    }
+
+    .tree-group a {
+        font-size: 1.3rem;
+    }
+}
 
 
 /* Portfolio Page Redesign */
