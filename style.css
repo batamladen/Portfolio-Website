@@ -23,7 +23,7 @@
     }
 }
 
-
+/* Za main smo koristili zelenu pre (#6a9367) */
 
 *{
     margin: 0;
@@ -108,16 +108,16 @@ nav a.download-cv {
 }
 
 nav a.download-cv:hover {
-    color: #6a9367;
-    border-bottom: 3px solid #6a9367;
+    color: #D48BB5;
+    border-bottom: 3px solid #D48BB5;
 }
 
 
 /* Default hover color for home page */
 body.home-page nav a:hover,
 nav a.index {
-    color: #6a9367;
-    border-bottom: 3px solid #6a9367;
+    color: #D48BB5;
+    border-bottom: 3px solid #D48BB5;
 }
 
 
@@ -143,7 +143,7 @@ section{
 }
 
 span{
-    color: #6a9367;
+    color: #D48BB5;
 }
 
 .home-content h3{
@@ -157,7 +157,7 @@ span{
 }
 
 .home-content p a {
-    color: #6a9367;
+    color: #D48BB5;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -179,7 +179,7 @@ span{
 
 .home-img img:hover{
     font-weight: 500;
-    box-shadow: 0 0 25px #6a9367;
+    box-shadow: 0 0 25px #D48BB5;
 }
 
 .social-icons a{
@@ -189,19 +189,19 @@ span{
     width: 4rem;
     height: 4rem;
     background-color: transparent;
-    border: 0.2rem solid #6a9367;
+    border: 0.2rem solid #D48BB5;
     font-size: 2rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
-    color: #6a9367;
+    color: #D48BB5;
 }
 
 .social-icons a:hover{
     color: black;
     transform: scale(1.3) translateY(-5px);
     background-color: white;
-    box-shadow: 0  0 25px #6a9367;
+    box-shadow: 0  0 25px #D48BB5;
 }
 
 .btn{
@@ -210,10 +210,10 @@ span{
     background-color: black;
     border-radius: 4rem;
     font-size: 1.6rem;
-    color: #6a9367;
+    color: #D48BB5;
     letter-spacing: 0.3rem;
     font-weight: 600;
-    border: 2px solid #6a9367;
+    border: 2px solid #D48BB5;
     transition: 0.3s ease;
     cursor: pointer;
 }
@@ -222,7 +222,7 @@ span{
     transform: scale3d(1.03);
     background-color: white;
     color: black;
-    box-shadow: 0 0 25px #6a9367;
+    box-shadow: 0 0 25px #D48BB5;
 }
 
 .typing-text{
@@ -337,7 +337,7 @@ span{
 }
 
 .modal button:hover {
-    background-color: #6a9367;
+    background-color: #D48BB5;
 }
 
 
@@ -1296,8 +1296,8 @@ span{
 /* ===================== */
 /* Define these OUTSIDE the media query */
 .home-page {
-    --nav-color: #6a9367;
-    --nav-color-rgb: 106, 147, 103;
+    --nav-color: #D48BB5;
+    --nav-color-rgb: 212, 139, 189;
 }
 .about-page {
     --nav-color: #d47e50;
